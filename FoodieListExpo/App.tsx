@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { SafeAreaView, StatusBar } from "react-native";
-import HomeScreen from "./src/screens/HomeScreen";
+import { ThemeProvider } from "./src/theme/ThemeProvider";
+import FoodListScreen from "./src/screens/FoodListScreen";
 import useStore from "./src/store";
 
 export default function App() {
@@ -10,9 +11,8 @@ export default function App() {
   }, []);
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <StatusBar barStyle="dark-content" />
-      <HomeScreen />
-    </SafeAreaView>
+    <ThemeProvider>
+      <FoodListScreen />
+    </ThemeProvider>
   );
 }
